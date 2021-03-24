@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Frameworks JS</title>
+    <script type="module">
+        import { LitElement, html, css } from "https://jspm.dev/lit-element@2";
+
+        class MyCustomElem extends LitElement {
+            static get styles() {
+                return css`.greeting { color: blue; }`;
+            }
+
+            render() {
+                return html`<h1 class="greeting">Hello World</h1>`;
+            }
+        }
+
+        customElements.define("my-custom-elem", MyCustomElem);
+    </script>
+</head>
+<body>
+    <my-custom-elem></my-custom-elem>
+</body>
+</html>
